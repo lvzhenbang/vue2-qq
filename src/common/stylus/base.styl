@@ -1,0 +1,23 @@
+// 全局颜色
+color-w = #fff
+color-g = #f4f4f6
+color-b = #2e2c6b
+
+
+// 全局基础设置
+body,html
+  // line-height:1
+  font-weight:200
+  font-family:'PingFang SC','STHeitiSC-Light','Helvetica-Light'
+  color: color-b
+
+// 清楚浮动
+.clear
+  display:inline-block
+  &:after
+    display: block
+    content: "."
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
