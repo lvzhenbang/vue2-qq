@@ -7,7 +7,7 @@
   
 ## 效果演示图
 
-  [效果图]()
+  [效果图](https://github.com/lvzhenbang/vue2-demo/blob/master/static/images/%E9%A1%B9%E7%9B%AE%E6%BC%94%E7%A4%BA.gif)
 
 ### 免责声明
 
