@@ -9,7 +9,7 @@
                  :size="30"
                  @click="showSidebar_x(true)" />
   
-      <div slot="default" class="title"> {{headerTitle}} </div>
+      <div slot="default" class="title" v-text="headerTitle"></div>
   
       <!--<mu-icon-button icon="search" slot="right" />-->
       <mu-icon slot="right"

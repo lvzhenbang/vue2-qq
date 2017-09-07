@@ -1,9 +1,7 @@
 <template>
   <div class="index">
-    <div class="top"
-         :style="{backgroundImage: `url(${userData.avatar})`}">
-  
-      <mu-appbar title="name"
+    <div class="top">  
+      <mu-appbar title="个人资料" 
                  :zDepth="0">
         <mu-icon-button icon="arrow_back"
                         slot="left"
@@ -13,67 +11,68 @@
           <mu-icon-button icon="more_vert" />
         </div>
       </mu-appbar>
+    </div>
+    <div class="content">
   
-      <div class="c">
+      <div class="person-bg"
+                   :style="{backgroundImage: `url(${userData.avatar})`}">  
+      </div>
+
+      <div class="person-info">
         <mu-avatar :src="userData.avatar"
                    :size="96" />
-        <span class="name">{{userData.name}}</span>
+        <span class="name" v-text="userData.name"></span>
       </div>
+
       <mu-tabs :value="activeTab"
                @change="handleTabChange">
         <mu-tab value="tab1"
-                title="TAB ONE" />
+                title="基本信息" />
         <mu-tab value="tab2"
-                title="TAB TWO" />
+                title="动态信息" />
         <mu-tab value="tab3"
-                title="TAB ACTIVE" />
+                title="精选图片" />
       </mu-tabs>
-    </div>
-    <div class="content">
-      <div class="item">
-        <div v-if="activeTab === 'tab1'">
-          <mu-list-item title="Phone"
-                        :describeText="userData.phone"
-                        disabled>
-            <mu-icon value="voicemail"
-                     color="#2e2c6b"
-                     slot="left" />
-          </mu-list-item>
-        </div>
-      </div>
-  
-      <div class="item">
-        <div v-if="activeTab === 'tab1'">
-          <mu-list-item title="Region"
-                        :describeText="userData.address"
-                        disabled>
-            <mu-icon value="location_on"
-                     color="#2e2c6b"
-                     slot="left" />
-          </mu-list-item>
-        </div>
-      </div>
-  
-      <div class="item">
-        <div v-if="activeTab === 'tab1'">
-          <mu-list-item title="Birthday"
-                        :describeText="userData.birthday"
-                        disabled>
-            <mu-icon value="cake"
-                     color="#2e2c6b"
-                     slot="left" />
-          </mu-list-item>
-        </div>
+      
+      <div v-if="activeTab === 'tab1'">
+        <mu-list-item title="Phone"
+                      :describeText="userData.phone"
+                      disabled>
+          <mu-icon value="voicemail"
+                   color="#2e2c6b"
+                   slot="left" />
+        </mu-list-item>
+        <mu-divider/>
+
+        <mu-list-item title="Region"
+                      :describeText="userData.address"
+                      disabled>
+          <mu-icon value="location_on"
+                   color="#2e2c6b"
+                   slot="left" />
+        </mu-list-item>
+        <mu-divider/>
+
+        <mu-list-item title="Birthday"
+                      :describeText="userData.birthday"
+                      disabled>
+          <mu-icon value="cake"
+                   color="#2e2c6b"
+                   slot="left" />
+        </mu-list-item>
+        <mu-divider/>
+
       </div>
   
       <div v-if="activeTab === 'tab2'">
-        <h1>制作中....</h1>
+        <h1>制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....制作中....</h1>
       </div>
       <div v-if="activeTab === 'tab3'">
         <h1>未完待续....</h1>
       </div>
     </div>
-  
+    
+    <!-- 底部 tab -->
     <mu-tabs class="bottom" >
       <mu-tab value="tab1"
               icon="videocam" />
@@ -83,7 +82,7 @@
               icon="chat_bubble"
               @click="showDialog_x" />
     </mu-tabs>
-  
+
   </div>
 </template>
 <script>
@@ -126,7 +125,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped>
+<style lang="stylus">
 @import '../../common/stylus/mixin.styl'
 .icons
   color:#f00
@@ -136,48 +135,45 @@ export default {
   top: 0
   left: 0
   width: 100%
-  height: 100vh
   background: color-g
   .top
-    position: relative
-    height: 38vh
-    // background-image: url('./avatar.jpg')
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 103
+    width: 100%
+    height: 10%
+    .mu-appbar
+      background: color-w
+      color: #333
+      text-align: center
+  .bottom
+    position: fixed
+    left: 0
+    bottom: 0
+    z-index: 103
+    width: 100%
+    height: 10%
+    background: color-w
+  .content
+    width: 100%
+    margin-bottom: 56px
     background-size: cover
-    .c
-      position: absolute
-      z-index: 1
+    .person-bg
       width: 100%
+      height: 200px
+    .person-info
+      margin-top: -48px
       text-align: center
       .name
         display: block
         margin-top: 4px
         font-size: 1.6em
-        color: #fff
-    &:after
-      position: absolute
-      top: 0
-      left: 0
-      width: 100%
-      height: 100%
-      background: rgba(0,0,88,.5)
-      content: ''
-    .mu-appbar
-      position: relative
-      z-index:1
-      background:rgba(0,0,0,0)
+        color: #333
     .mu-tabs
-      position: absolute
-      bottom: 0
-      left: 0
-      z-index: 1
-      background:rgba(0,0,0,0)
-  .content
+      background: #999
     .item
       margin-top: 6px
       margin-left: 20px
-  .bottom
-    position: absolute
-    left: 0
-    bottom: 0
-    background: color-w
+      margin-bottom: 56px
 </style>

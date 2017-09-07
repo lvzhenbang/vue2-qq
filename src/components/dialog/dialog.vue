@@ -1,6 +1,6 @@
 <template>
   <div class="dialog">
-    <mu-appbar :title="userData.self.name"
+    <mu-appbar :title="userData.friend.name"
                :zDepth="0">
       <mu-icon-button icon="arrow_back"
                       slot="left"

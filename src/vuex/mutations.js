@@ -65,7 +65,7 @@ const mutations = {
       })
     }
   },
-  // 删除消息
+  // 删除信息
   removeMessage(state, { _id }) {
     state.messageList.forEach((item, index, arr) => {
       // 判断信息列表中id与正在删除的信息id是否相同，如果相同，就删除信息

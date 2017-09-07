@@ -20,7 +20,6 @@
     </div>
   
     <!--主页左侧弹出层-->
-    <!--此处加z-index，防止弹出时被遮罩层遮挡-->
     <my-sidebar style="z-index: 20141224;"></my-sidebar>
     <!--对话界面-->
     <my-dialog class="my-dialog"

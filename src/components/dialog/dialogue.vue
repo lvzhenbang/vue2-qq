@@ -6,7 +6,7 @@
         <mu-avatar :src="item._id===0?userData.self.avatar:userData.friend.avatar"
                    :slot="item._id===0?'rightAvatar':'leftAvatar'" />
         <span :slot="item._id===0?'after':'title'">
-                    <span class="content" style="color: rgba(0, 0, 0, .9)">{{item.message}}</span>
+          <span class="content" style="color: rgba(0, 0, 0, .9)" v-text="item.message"></span>
         </span>
       </mu-list-item>
     </div>

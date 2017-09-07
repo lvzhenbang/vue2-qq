@@ -43,8 +43,6 @@
                       :disableRipple="true">
           <mu-avatar :src="item.avatar"
                      slot="leftAvatar" />
-          <mu-icon value="chat_bubble"
-                   slot="right" />
         </mu-list-item>
         <mu-divider inset/>
       </div>

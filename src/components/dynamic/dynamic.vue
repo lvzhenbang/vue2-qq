@@ -102,7 +102,7 @@ export default({
 })
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 @import '../../common/stylus/mixin.styl'
 .dynamic
   .item
