@@ -77,6 +77,8 @@
 
 </pre>
 
+### 运行这个项目
+
   ``` bash
   # 安装
   npm install
@@ -86,3 +88,10 @@
 
   # 发布
   npm run build
+
+  ```
+ ### LICENSE
+ 
+ [MIT](https://opensource.org/licenses/MIT)
+ 
+ Copyright (c) 2017.9-present, Zhenbang Lv
